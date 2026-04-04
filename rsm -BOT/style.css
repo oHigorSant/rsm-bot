@@ -1,0 +1,254 @@
+/* Design Clean / Institucional */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1a1f24;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Institucional */
+.header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e4e8;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #0b2239;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #0056b3;
+}
+
+.nav-links .btn-primary {
+    background-color: #0056b3;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links .btn-primary:hover {
+    background-color: #004494;
+    color: #ffffff;
+}
+
+/* Seção Hero Clean */
+.hero-section {
+    padding: 100px 0 60px;
+    text-align: center;
+    background-color: #f7f9fa; /* Fundo levemente cinza */
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: #0b2239;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #5a6b7c;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* Área do Robô (Livre pela Tela) */
+.robot-track {
+    position: relative;
+    width: 100%;
+    height: 1px; /* Linha de base zero entre as seções */
+    z-index: 10;
+}
+
+/* Somente o Robô Caminhando (Caminhando "Pela tela") */
+.robot-container {
+    position: absolute;
+    bottom: 0px; /* Alinhado perfeitamente na linha que divide o site */
+    left: -20%;
+    height: 250px; /* Altura do robô um pouco menor para integrar melhor */
+    z-index: 20;
+    animation: slowWalkAcross 42s linear infinite; /* Animação com paradas programadas */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    pointer-events: none; /* Evita que o gif bloqueie cliques do mouse nos botões e textos atrás dele */
+}
+
+/* Imagem convertida de gif/vídeo */
+#robot-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Faz o fundo branco do GIF, se houver, sumir */
+    filter: drop-shadow(0px 8px 10px rgba(0, 0, 0, 0.08)); /* Sombra institucional sutil */
+}
+
+/* Animação que faz o contorno do gif ir de um lado para o outro de forma limpa */
+@keyframes slowWalkAcross {
+    0% { left: -30%; transform: scaleX(1); }
+    23.8095% { left: 35%; transform: scaleX(1); }
+    25.0% { left: 35%; transform: scaleX(1); }
+    48.8095% { left: 100%; transform: scaleX(1); }
+    48.81% { left: 100%; transform: scaleX(-1); }
+    50.0% { left: 100%; transform: scaleX(-1); }
+    73.8095% { left: 35%; transform: scaleX(-1); }
+    75.0% { left: 35%; transform: scaleX(-1); }
+    98.8095% { left: -30%; transform: scaleX(-1); }
+    98.81% { left: -30%; transform: scaleX(1); }
+    100% { left: -30%; transform: scaleX(1); }
+}
+
+/* Seção de Funcionalidades (Cards Clean) */
+.features-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.feature-card {
+    background: #ffffff;
+    border: 1px solid #eef0f2;
+    padding: 40px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    border-color: #e1e4e8;
+}
+
+.icon-placeholder {
+    width: 48px;
+    height: 48px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.icon-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background-color: #0056b3;
+    border-radius: 50%;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+    color: #0b2239;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 15px;
+    color: #5a6b7c;
+    line-height: 1.6;
+}
+
+/* Rodapé Corporativo */
+.footer {
+    background-color: #f7f9fa;
+    border-top: 1px solid #e1e4e8;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-brand .logo {
+    margin-bottom: 8px;
+}
+
+.footer-brand p {
+    color: #5a6b7c;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: #5a6b7c;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #0056b3;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eef0f2;
+    color: #a0aec0;
+    font-size: 13px;
+    margin: 0 5%;
+}
